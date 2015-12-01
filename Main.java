@@ -23,13 +23,22 @@ public class Main {
         System.out.println("------------------\n");
 
         //Declaramos las variables
-        String nombre = IntroducirDatos.ValorIntroducido("Introduzca su nombre: ");
-        String apellido = IntroducirDatos.ValorIntroducido("Introduzca su apellido: ");
-        String sexo = IntroducirDatos.ValorIntroducido("Es usted hombre o mujer?: ");
-        String direccion = IntroducirDatos.ValorIntroducido("Introduzca su direccion: ");
-        String telefono = IntroducirDatos.ValorIntroducido("Intruduzca su número de teléfono: ");
-        String edadString = IntroducirDatos.ValorIntroducido("Intruduzca su edad: ");
-        String estadoCivil = IntroducirDatos.ValorIntroducido("Está usted casado? ");
+
+        String nombre = IntroducirDatos.ValorConCorreccion("Introduzca su nombre: ");
+        String apellido = IntroducirDatos.ValorConCorreccion("Introduzca su apellido: ");
+        String sexo = IntroducirDatos.ValorConCorreccion("Es usted hombre o mujer?: ");
+
+        //Diferencia el sexo para que se escriba correctamente en etado Civil
+        String sufSexo = "a";
+        if (sexo.equals("Hombre") || sexo.equals("HOMBRE") || sexo.equals("hombre")){
+            sufSexo = "o";
+        }
+
+
+        String direccion = IntroducirDatos.ValorConCorreccion("Introduzca su direccion: ");
+        String telefono = IntroducirDatos.ValorConCorreccion("Introduzca su número de teléfono: ");
+        String edadString = IntroducirDatos.ValorConCorreccion("Introduzca su edad: ");
+        String estadoCivil = IntroducirDatos.ValorConCorreccion("Está usted casad" + sufSexo +"? ");
 
 
         //Comprobación de la edad
@@ -62,7 +71,7 @@ public class Main {
         System.out.println("Dirección: " + direccion);
         System.out.println("Teléfono: " + telefono);
         System.out.println("Edad: " + edadString);
-        System.out.println("Casado? : " + estadoCivil);
+        System.out.println("Casad" + sufSexo +": " + estadoCivil);
 
         System.out.println("------------------\n");
 
